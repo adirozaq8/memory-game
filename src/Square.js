@@ -1,9 +1,13 @@
 import React from 'react';
 import './Square.css';
 
-const Square = () => {
+const Square = ({pickedColor, onClick, showing}) => {
+  let style ={}
+  if(showing){
+    style.backgroundColor = pickedColor
+  }
   return (
-    <div className="square">
+    <div className={`square ${pickedColor}`} onClick={onClick} style={style}>
     </div>
   )
 }
